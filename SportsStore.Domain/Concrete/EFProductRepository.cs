@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
 
@@ -31,6 +32,8 @@ namespace SportsStore.Domain.Concrete
                     dbEntry.Description = product.Description;
                     dbEntry.Price = product.Price;
                     dbEntry.Category = product.Category;
+                    dbEntry.ImageMimeType = product.ImageMimeType;
+                    dbEntry.ImageData = product.ImageData;
                 }
             }
             context.SaveChanges();
@@ -46,5 +49,7 @@ namespace SportsStore.Domain.Concrete
             }
             return dbEntry;
         }
+
+        
     }
 }
